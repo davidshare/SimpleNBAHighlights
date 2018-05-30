@@ -3,7 +3,13 @@ import React from 'react'
 const Footer = () =>{
 	
 	return(
-		<h3>Footer</h3>
+		<footer>
+			<div className="flexbox-container">
+				<div className="logo">
+					<span></span>
+				</div>
+			</div>
+		</footer>
 	)
 }
 
