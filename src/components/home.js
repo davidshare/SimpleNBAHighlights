@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 //Components
 import Featured from './featured'
 
+const URL_HOME = 'http://localhost:3005/home';
+
 class Home extends Component{
 	constructor(props){
 		super(props)
@@ -10,6 +12,16 @@ class Home extends Component{
 		this.state ={
 			home:''
 		}
+	}
+
+	componentDidMount(){
+		fetch(URL_HOME, {method:'GET'})
+		.then(response => response.json())
+		.then(json=>{
+			this.setState({
+				home:json
+			})
+		})
 	}
 
 	render(){
