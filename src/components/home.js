@@ -26,7 +26,7 @@ class Home extends Component{
 
 	render(){
 		return(
-			<Featured />
+			<Featured slides={this.state.slider}/>
 		)
 	}
 }
