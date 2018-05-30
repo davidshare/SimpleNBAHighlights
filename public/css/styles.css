@@ -4,3 +4,9 @@ body{
 	font-family: 'Roboto'
 	color:#1b1b1b;
 }
+
+.flexbox-container{
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+}
