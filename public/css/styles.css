@@ -10,3 +10,14 @@ body{
 	display: -webkit-flex;
 	display: flex;
 }
+
+a{
+	text-decoration: none;
+}
+
+h3{
+	font-family: 'impact',
+	font-size:35px;
+	font-weight: 300;
+	margin-bottom: 0;
+}
