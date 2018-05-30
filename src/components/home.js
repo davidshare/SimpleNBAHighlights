@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import Featured from './featured'
 
 class Home extends Component{
+
 	render(){
 		return(
 			<Featured />
