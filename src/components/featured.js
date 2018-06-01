@@ -1,42 +1,41 @@
-import React from 'react'
-import Slider from 'react-slick'
-
+import React from 'react';
+import Slider from 'react-slick';
 
 const settings = {
-	arrows:true,
-	dots:true,
-	infinite:true,
-	speed:500,
-	slidesToShow:1,
-	slidesToScroll:1
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+};
+
+const generateSlides = ({slides}) => {
+    if(slides){
+         return (
+            <Slider {...settings}>
+                {slides.map(function(item){
+                    return (
+                        <div key={item.id} className="item_slider" 
+                            style={{background:`url(/images/covers/${item.cover})`}}>
+                            <div className="caption">
+                                <h4>{item.topic}</h4>
+                                <p>{item.title}</p>
+                            </div>
+                        </div>
+                        )  
+                })}
+            </Slider>
+        )
+    }
 }
 
-const generateSlides = ({slides}) =>{
-	if(slides){
-		return (
-			<Slider {...settings}>
-				{slides.map((item)=>{
-					return(
-						<div key={item.id} className="item-slider" style={{background:`url(/images/covers/${item.cover})`}}>
-							
-							<div className="caption">
-								<h4>{item.topic}</h4>
-								<p>{item.title}</p>
-							</div>
-						</div>
-					)
-				})}
-			</Slider>
-		)
-	}
+const Featured = (props) => {
+    return(
+        <div>
+            {generateSlides(props)}
+        </div>
+    )
 }
 
-const Featured =(props) =>{
-	return (
-		<div>
-			{generateSlides(props)}
-		</div>
-	)
-}
-
-export default Featured
+export default Featured;
