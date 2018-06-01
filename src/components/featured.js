@@ -1,6 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 
+import SlideElement from './slideElement'
+
 const settings = {
     arrows: false,
     dots: false,
@@ -14,17 +16,10 @@ const generateSlides = ({slides}) => {
     if(slides){
          return (
             <Slider {...settings}>
-                {slides.map(function(item){
-                    return (
-                        <div key={item.id} className="item_slider" 
-                            style={{background:`url(/images/covers/${item.cover})`}}>
-                            <div className="caption">
-                                <h4>{item.topic}</h4>
-                                <p>{item.title}</p>
-                            </div>
-                        </div>
-                        )  
-                })}
+            <div>
+                {slides.map((item)=><div key={item.id}><SlideElement item={item} /></div>
+                )}
+                </div> 
             </Slider>
         )
     }
